@@ -61,10 +61,10 @@ class Noticia
         return $this->fecha;
     }
     public function getTextoNoticia(){
-        return $this->fecha;
+        return $this->textoNoticia;
     }
     public function getTextoTitular(){
-        return $this->fecha;
+        return $this->textoTitular;
     }
 
     public function setSeccion($seccion){

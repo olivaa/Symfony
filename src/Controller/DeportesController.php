@@ -25,7 +25,7 @@ class DeportesController extends Controller
      */
     public function inicio()
     {
-        return new Response('Mi página de deportes!');
+        return $this->render("base.html.twig");
     }
 
 
@@ -38,11 +38,11 @@ class DeportesController extends Controller
         $em=$this->getDoctrine()->getManager();
 
         $noticia=new Noticia();
-        $noticia->setSeccion("futbol");
-        $noticia->setEquipo("Barcelona");
+        $noticia->setSeccion("tenis");
+        $noticia->setEquipo("rafa-nada");
         $noticia->setFecha("15022018");
-        $noticia->setTextoTitular("Titular de ejemplo Barcelona");
-        $noticia->setTextoNoticia("Texto de ejemplo Barcelona");
+        $noticia->setTextoTitular("rafa-nadal-numero-uno-del-mundo");
+        $noticia->setTextoNoticia("Rafael Nadal no afloja. El tenista mallorquín de 31 años  sigue adelante en el Abierto de Australia, el primer Grand Slam del año, y de paso se ha asegurado acabar la semana como número 1 del mundo ante el acoso del suizo Roger Federer. Los dos objetivos ha conseguido Nadal al derrotar en un durísimo partido de octavos de final al argentino Diego Schwartzman en cuatro sets, 6-3, 6-7 (4-7), 6-3 y 6-3, en casi cuatro horas de juego (3 horas y 51 minutos) en la pista central Rod Laver del Melbourne Park.");
 
         $em->persist($noticia);
 
@@ -108,6 +108,7 @@ class DeportesController extends Controller
             , $usuario_get));
     }
 
+
     /**
      * @Route("/deportes/usuario/{nombre}", name="usuario_session" )
      */
@@ -119,6 +120,8 @@ class DeportesController extends Controller
             , $usuario
         ));
     }
+
+
 
     /**
      * @Route("/deportes/{seccion}/{pagina}", name="lista_paginas",
@@ -143,20 +146,37 @@ class DeportesController extends Controller
             "seccion"=>$seccion
         ]);
 
-        return new Response("Hay un total de ".count($noticias)." noticias de la seccion de ".$seccion);
+        return $this->render('noticias/listar.html.twig', [
+            'titulo' => ucwords(str_replace('-', ' ', $seccion)),
+            'noticias'=>$noticias
+        ]);
     }
 
 
+
     /**
-     * @Route("/deportes/{seccion}/{slug} ",
+     * @Route("/deportes/{seccion}/{titular} ",
      * defaults={"seccion":"tenis"})
      */
-    public function noticia($slug, $seccion)
+    public function noticia($titular, $seccion)
     {
 
-        return new Response(sprintf(
-            'Noticia de %s, con url dinamica=%s',
-            $seccion, $slug));
+        $em=$this->getDoctrine()->getManager();
+        $repository = $this->getDoctrine()->getRepository(Noticia::class);
+
+        $noticia= $repository->findOneBy(['textoTitular' => $titular]);
+        //Si la noticia que buscamos no se encuentra lanzamos error 404
+        if(!$noticia){
+            throw $this->createNotFoundException('Error 404 este deporte no esta en nuestra Base de Datos');
+        }
+
+
+
+        return $this->render('noticias/noticia.html.twig', [
+            //parseamos el titular para quitar los simbolos -
+            'titulo' => ucwords(str_replace('-', ' ', $titular)),
+            'noticias'=>$noticia
+        ]);
     }
 
 

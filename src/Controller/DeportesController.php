@@ -8,8 +8,9 @@
 
 namespace App\Controller;
 
-
+use App\Entity\Noticia;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -26,6 +27,66 @@ class DeportesController extends Controller
     {
         return new Response('Mi página de deportes!');
     }
+
+
+
+    /**
+     * @Route("/deportes/cargarbd", name="noticia")
+     */
+    public function cargarBd()
+    {
+        $em=$this->getDoctrine()->getManager();
+
+        $noticia=new Noticia();
+        $noticia->setSeccion("futbol");
+        $noticia->setEquipo("Barcelona");
+        $noticia->setFecha("15022018");
+        $noticia->setTextoTitular("Titular de ejemplo Barcelona");
+        $noticia->setTextoNoticia("Texto de ejemplo Barcelona");
+
+        $em->persist($noticia);
+
+        $em->flush();
+
+        return new Response("Noticia guardada con éxito con id:".$noticia->getId());
+
+    }
+
+    /**
+     * @Route("/deportes/actualizar", name="actualizarNoticia")
+     */
+    public function actualizarBd(Request $request)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $id=$request->query->get('id');
+        $noticia = $em->getRepository(Noticia::class)->find($id);
+
+        $noticia->setTextoTitular("Titular de ejemplo actualizado para la noticia con id:".$noticia->getId());
+        $noticia->setTextoNoticia("Texto de ejemplo actualizado para la noticia con id:".$noticia->getId());
+
+        $em->flush();
+
+        return new Response("Noticia actualizada!");
+
+    }
+
+
+    /**
+     * @Route("/deportes/eliminar", name="actualizarNoticia")
+     */
+    public function eliminarBd(Request $request)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $id=$request->query->get('id');
+        $noticia = $em->getRepository(Noticia::class)->find($id);
+
+        $em->remove($noticia);
+        $em->flush();
+
+        return new Response("Noticia eliminada!");
+
+    }
+
 
     /**
      * @Route("/deportes/usuario", name="usuario" )
@@ -66,21 +127,24 @@ class DeportesController extends Controller
      */
     public function lista($pagina = 1, $seccion)
     {
-        //Simulamos una baser de datos de deportes
-        $deportes=["futbol", "tenis","rugby"];
 
+        $em=$this->getDoctrine()->getManager();
+        $repository = $this->getDoctrine()->getRepository(Noticia::class);
 
+        $noticiaSec= $repository->findOneBy(['seccion' => $seccion]);
         //Si el deporte que buscamos no se encuentra lanzamos la
         //excepcion 404 deporte no encontrado
-        if(!in_array($seccion,$deportes)){
+        if(!$noticiaSec){
             throw $this->createNotFoundException('Error 404 este deporte no esta en nuestra Base de Datos');
         }
 
-        return new Response(sprintf(
-            'Deportes seccion: seccion %s, listado de noticias pagina %s',
-            $seccion, $pagina));
-    }
+        //almacenamos todas las noticias de una seccion en una lista
+        $noticias = $repository->findBy([
+            "seccion"=>$seccion
+        ]);
 
+        return new Response("Hay un total de ".count($noticias)." noticias de la seccion de ".$seccion);
+    }
 
 
     /**

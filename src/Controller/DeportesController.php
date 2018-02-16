@@ -10,13 +10,13 @@ namespace App\Controller;
 
 use App\Repository\NoticiaRepository;
 use App\Entity\Noticia;
+use App\Form\Login;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Session\Session;
-
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class DeportesController extends Controller
 
@@ -122,6 +122,24 @@ class DeportesController extends Controller
         ));
     }
 
+
+
+    /**
+     * @Route("/deportes/login", name="login_seguro" )
+     */
+    public function loginUsuario(Request $request, AuthenticationUtils $authUtils)
+    {
+        // get the login error if there is one
+        $error = $authUtils->getLastAuthenticationError();
+
+        // last username entered by the user
+        $lastUsername = $authUtils->getLastUsername();
+
+        return $this->render('Security/login.html.twig', array(
+            'last_username' => $lastUsername,
+            'error'         => $error,
+        ));
+    }
 
 
     /**

@@ -2,3 +2,22 @@ twig:
     paths: ['%kernel.project_dir%/templates']
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+
+    #Variables globales:
+    globals:
+
+            # Examples:
+            textoInicio:                 'Mi página de deportes'
+            pi:                  3.1415
+
+    #Formato de la fecha
+    date:
+            format: d.m.Y, H:i:s
+            interval_format: '%%d days'
+            timezone: Europe/Madrid
+
+
+    number_format:
+            decimals: 2
+            decimal_point: ','
+            thousands_separator: '.'

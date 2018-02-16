@@ -42,6 +42,10 @@ class Noticia
      */
     private $textoNoticia;
 
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $imagen;
 
 
     /*Getters&Setters*/
@@ -67,6 +71,11 @@ class Noticia
         return $this->textoTitular;
     }
 
+    public function getImagen(){
+        return $this->imagen;
+    }
+
+
     public function setSeccion($seccion){
         $this->seccion=$seccion;
     }
@@ -84,7 +93,9 @@ class Noticia
     public function setTextoNoticia($textoNoticia){
         $this->textoNoticia=$textoNoticia;
     }
-
+    public function setImagen($imagen){
+        $this->imagen=$imagen;
+    }
 
 
 }

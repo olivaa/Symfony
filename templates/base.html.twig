@@ -20,7 +20,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a style="color: #fff;" class="nav-link" href="#">Inicio</a>
+                <a style="color: #fff;" class="nav-link" href="http://localhost:8000/deportes">Inicio</a>
             </li>
             <!-- AÑADIR LINKS A LAS SECCIONES CON LA RUTA, PARA VER LISTADO DE NOTICIAS -->
             <li class="nav-item">
@@ -42,20 +42,26 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown" style="margin-right: 75px;">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="nav-profile-img rounded-circle" src="images/runner.png">
+                    <img class="nav-profile-img rounded-circle" src="{{asset('images/runner.png')}}">
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">Perfil</a>
-                    <a class="dropdown-item" href="#">Crear Post</a>
+                    <a class="dropdown-item" href="#">Crear Noticia</a>
                     <a class="dropdown-item" href="#">Logout</a>
                 </div>
             </li>
         </ul>
     </div>
 </nav>
-{% block body %}{% endblock %}
+{% block body %}
+    <div class="container text-center">
+        <!-- Añadir una variable que recibira un texto. Así podemos utilizar esta página para los errores 404 -->
+        <h1 class="text-muted"> {{ texto }} </h1>
+    </div>
+{% endblock %}
 <footer class="footer">
     <div class="container text-center">
+        <!-- Texto del footer -->
         <span class="text-muted">Mi página de deportes <i class="fa fa-heart" style="color: red;"></i> realizada con Symfony4 <a href="#">ImaginaFormacion</a></span>
     </div>
 </footer>

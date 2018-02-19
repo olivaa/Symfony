@@ -1,13 +1,12 @@
 security:
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
           in_memory:
               memory:
                   users:
-                      alejandro:
+                      Alejandro:
                           password: alejandro
                           roles: 'ROLE_USER'
-                      admin:
+                      Admin:
                           password: admin
                           roles: 'ROLE_ADMIN'
     encoders:
@@ -24,6 +23,10 @@ security:
                         check_path: /deportes/login
                         default_target_path: /deportes
                         always_use_default_target_path: true
+                    logout:
+                        path:   /deportes/logout
+                        target: /deportes
+
 
             # activate different ways to authenticate
 

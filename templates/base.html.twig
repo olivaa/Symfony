@@ -45,9 +45,26 @@
                     <img class="nav-profile-img rounded-circle" src="{{asset('images/runner.png')}}">
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a class="dropdown-item" href="#">
+                        {{ app.user.username }}
+
+                    </a>
+                    {% endif %}
                     <a class="dropdown-item" href="#">Perfil</a>
                     <a class="dropdown-item" href="#">Crear Noticia</a>
-                    <a class="dropdown-item" href="#">Logout</a>
+
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <a class="dropdown-item" href="/deportes/logout">
+                            Logout
+                        </a>
+                        {% else %}
+                            <a class="dropdown-item" href="/deportes/login">
+                                Login
+                            </a>
+                        {% endif %}
+
+                    </a>
                 </div>
             </li>
         </ul>
@@ -65,6 +82,7 @@
     <div class="container text-center">
         <!-- Texto del footer -->
         <span class="text-muted">Mi página de deportes <i class="fa fa-heart" style="color: red;"></i> realizada con Symfony4 <a href="#">ImaginaFormacion</a></span>
+
     </div>
 </footer>
 {% block javascripts %}

@@ -17,6 +17,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\Translation\Translator;
+use Symfony\Component\Translation\Loader\ArrayLoader;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class DeportesController extends Controller
@@ -27,6 +29,14 @@ class DeportesController extends Controller
      */
     public function inicio($texto="Mi página de deportes!!")
     {
+
+        $translator = new Translator('es_US');
+        $translator->addLoader('array', new ArrayLoader());
+        $translator->addResource('array', array(
+            'Mi página de deportes!!' => 'My sports web!!',
+        ), 'en_US');
+
+        $texto=$translator->trans('Mi página de deportes!!');
         return $this->render("base.html.twig",[
             'texto'=>$texto
         ]);

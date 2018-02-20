@@ -10,6 +10,7 @@ namespace App\Controller;
 
 use App\Repository\NoticiaRepository;
 use App\Entity\Noticia;
+use App\Entity\Usuario;
 use App\Form\Login;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -92,7 +93,7 @@ class DeportesController extends Controller
     /**
      * @Route("/deportes/usuario", name="usuario" )
      */
-    public function serionUsuario(Request $request)
+    public function sesionUsuario(Request $request)
     {
         $usuarios=["alejandro","manuel","adrian"];
         $usuario_get=$request->query->get('nombre');
@@ -127,13 +128,15 @@ class DeportesController extends Controller
     /**
      * @Route("/deportes/login", name="login_seguro" )
      */
-    public function loginUsuario(Request $request, AuthenticationUtils $authUtils)
+    public function loginUsuario(Request $request)
     {
+        $authenticationUtils = $this->get('security.authentication_utils');
+
         // get the login error if there is one
-        $error = $authUtils->getLastAuthenticationError();
+        $error = $authenticationUtils->getLastAuthenticationError();
 
         // last username entered by the user
-        $lastUsername = $authUtils->getLastUsername();
+        $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('Security/login.html.twig', array(
             'last_username' => $lastUsername,
@@ -142,6 +145,38 @@ class DeportesController extends Controller
     }
 
 
+    /**
+     * @Route("/deportes/nuevousuario", name="usuariobd")
+     */
+    public function nuevoUsuarioBd()
+    {
+        $em=$this->getDoctrine()->getManager();
+
+        $usuario=new Usuario();
+        $usuario->setEmail("jose@imaginaformacion.com");
+        $usuario->setUsername("jose");
+        $password = $this->get('security.password_encoder')
+            ->encodePassword($usuario, "imaginapass");
+        $usuario->setPassword($password);
+
+        $em->persist($usuario);
+
+        $em->flush();
+
+        return new Response("Usuario guradado!");
+
+    }
+
+
+    /**
+     * @Route("/deportes/login_check", name="login_check")
+     */
+    public function loginCheck()
+    {
+        return $this->render("base.html.twig",[
+        'texto'=>'a'
+    ]);
+    }
 
 
 

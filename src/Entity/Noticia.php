@@ -72,7 +72,7 @@ class Noticia
     }
 
     public function getImagen(){
-        return $this->imagen;
+        $this->imagen=$imagen;
     }
 
 

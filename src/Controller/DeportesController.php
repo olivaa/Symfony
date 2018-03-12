@@ -24,33 +24,23 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class DeportesController extends Controller
 
 {
+
     /**
      * @Route("/deportes", name="inicio" )
      */
-    public function inicio($texto="Mi página de deportes!!")
+    public function inicio($texto="Mi página de deportes!!",$usuario="")
     {
-
-        $translator = new Translator('es_US');
-        $translator->addLoader('array', new ArrayLoader());
-        $translator->addResource('array', array(
-            'Mi página de deportes!!' => 'My sports web!!',
-        ), 'en_US');
-
-        $texto=$translator->trans('Mi página de deportes!!');
         return $this->render("base.html.twig",[
-            'texto'=>$texto
+            'texto'=>$texto,
+            'usuario'=>$usuario
         ]);
     }
-
-
-
     /**
      * @Route("/deportes/cargarbd", name="noticia")
      */
     public function cargarBd()
     {
         $em=$this->getDoctrine()->getManager();
-
         $noticia=new Noticia();
         $noticia->setSeccion("Tenis");
         $noticia->setEquipo("roger-federer");
@@ -59,9 +49,7 @@ class DeportesController extends Controller
         $noticia->setTextoNoticia("El suizo Roger Federer, el tenista más laureado de la historia, está a son un paso de regresar a la cima del tenis mundial a sus 36 años. Clasificado sin admitir ni réplica para cuartos de final del torneo de Rotterdam, si vence este viernes a Robin Haase se convertirá en el número uno del mundo ...");
         $noticia->setImagen('federer.jpg');
         $em->persist($noticia);
-
         $em->flush();
-
         return new Response("Noticia guardada con éxito con id:".$noticia->getId());
 
     }
@@ -105,19 +93,12 @@ class DeportesController extends Controller
      */
     public function sesionUsuario(Request $request)
     {
-        $usuarios=["alejandro","manuel","adrian"];
-        $usuario_get=$request->query->get('nombre');
-
-
-        if(in_array($usuario_get,$usuarios)) {
-            $session = new Session();
-            $session->start();
+           $usuario_get=$request->query->get('nombre');
+            $session = $request->getSession();
             $session->set('nombre', $usuario_get);
 
             return $this->redirectToRoute('usuario_session',array('nombre'=>$usuario_get));
-        }
-        return new Response(sprintf('Sesion invalida para usuario con nombre: %s'
-            , $usuario_get));
+
     }
 
 
@@ -142,10 +123,10 @@ class DeportesController extends Controller
     {
         $authenticationUtils = $this->get('security.authentication_utils');
 
-        // get the login error if there is one
+        // capturar error de autenticacion
         $error = $authenticationUtils->getLastAuthenticationError();
 
-        // last username entered by the user
+        // ultimo nobre de usuario autenticado
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('Security/login.html.twig', array(
@@ -318,7 +299,3 @@ class DeportesController extends Controller
 
 
 }
-
-
-
-

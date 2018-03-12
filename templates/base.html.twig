@@ -41,6 +41,7 @@
 
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown" style="margin-right: 75px;">
+
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="nav-profile-img rounded-circle" src="{{asset('images/runner.png')}}">
                 </a>
@@ -51,16 +52,16 @@
 
                     </a>
                     {% endif %}
-                    <a class="dropdown-item" href="#">Perfil</a>
-                    <a class="dropdown-item" href="#">Crear Noticia</a>
+                    <a class="dropdown-item" href="#">{{ 'Perfil'| trans }}</a>
 
-                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a class="dropdown-item" href="#">{{ 'Crear Noticia'| trans }}</a>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <a class="dropdown-item" href="/deportes/logout">
-                            Logout
+                            {{ 'LogOut'| trans }}
                         </a>
                         {% else %}
                             <a class="dropdown-item" href="/deportes/login">
-                                Login
+                                {{ 'LogIn'| trans }}
                             </a>
                         {% endif %}
 
@@ -74,7 +75,12 @@
     <div class="container text-center">
         <br>
         <!-- Añadir una variable que recibira un texto. Así podemos utilizar esta página para los errores 404 -->
-        <h1 class="text-muted"> {{ texto }} </h1>
+        <h1 class="text-muted"> {{ texto | trans }}
+           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+              {{'Bienvenido' | trans}}
+              {{ app.user.username}}
+          {% endif %}
+         </h1>
 
     </div>
 {% endblock %}
@@ -93,5 +99,3 @@
         $('.dropdown-toggle').dropdown();
     </script>
 {% endblock %}
-</body>
-</html>

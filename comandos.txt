@@ -1,0 +1,446 @@
+    1  gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+    2  sudo dpkg -i google-chrome-stable_current_amd64.deb 
+    3  sudo apt update 
+    4  sudo apt-get update 
+    5  sudo apt-get upgrade 
+    6  sudo apt-get -f
+    7  sudo apt-get -f install 
+    8  sudo apt-get upgrade 
+    9  sudo dpkg -i google-chrome-stable_current_amd64.deb 
+   10  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+   11  php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+   12  php composer-setup.php
+   13  php -r "unlink('composer-setup.php');"
+   14  sudo apt-get install phpstorm
+   15  cd Documentos/
+   16  cd Curso-Symfony/
+   17  git init
+   18  git add
+   19  git add .
+   20  git commit -m "Iniitial commit"
+   21  git config alolrod@epsa.upv.es
+   22  git config user.email "alolrod@epsa.upv.es"
+   23  git commit -m "Iniitial commit"
+   24  git status
+   25  .git/
+   26  .dit
+   27  .git
+   28  clear
+   29  ls
+   30  cd my_project/
+   31  git status
+   32  git add .
+   33  git commit -m "Initial commit"
+   34  git config user.email "alolrod@epsa.upv.es"
+   35  git commit -m "Initial commit"
+   36  composer require twig
+   37  php -S 127.0.0.1:8000 -t public
+   38  composer require debug-pack
+   39  php -S 127.0.0.1:8000 -t public
+   40  php bin/console server:stop
+   41  php bin/console server:status
+   42  php bin/console server:start
+   43  php -S 127.0.0.1:8000 -t public
+   44  php bin/console server:start
+   45  php composer.phar install
+   46  php composer.phar update
+   47  phpstorm 
+   48  ll
+   49  sudo rmdir .composer
+   50  ls
+   51  cd /home/imagina/.composer
+   52  php -v
+   53  sudo apt-get install php7.0-cli 
+   54  cd Documentos/
+   55  mkdir Curso-Symfony
+   56  mkdir html
+   57  cd html/
+   58  composer create-project symfony/skeleton my_project 
+   59  sudo apt-get install composer 
+   60  clear
+   61  composer create-project symfony/skeleton my_project 
+   62  sudo apt-get install php7.0-gd 
+   63  sudo apt-get install php7.0-intl
+   64  sudo apt-get install php7.0-xsl 
+   65  composer create-project symfony/skeleton my_project 
+   66  cd ..
+   67  ls
+   68  cd Curso-Symfony/
+   69  ls
+   70  mkdir html
+   71  composer create-project symfony/skeleton my_project 
+   72  ls
+   73  cd html
+   74  ls
+   75  cd symfony_4
+   76  ll
+   77  cd ..
+   78  ls
+   79  rm html/
+   80  sudo rmdir html/
+   81  sudo rmdir my_project/
+   82  sudo rmdir -p my_project/
+   83  clera
+   84  clear
+   85  mkdir html
+   86  composer create-project symfony/skeleton my_project 
+   87  ll
+   88  cd html/
+   89  composer create-project symfony/skeleton my_project make
+   90  ll
+   91  cd my_project/
+   92  mater
+   93  master
+   94  cd master
+   95  composer require server
+   96  sudo apt-get upgrade 
+   97  sudo apt-get update 
+   98  sudo apt-get upgrade 
+   99  sudo apt upgrade 
+  100  clear
+  101  composer require server
+  102  make serve
+  103  php bin/console server:start
+  104  ll
+  105  sudo snap install phpstorm --classic
+  106  phpstorm 
+  107  php bin/console server:stop
+  108  php bin/console server:start
+  109  phpstorm 
+  110  git remote add origin https://github.com/olivaa/Symfony.git
+  111  git push
+  112  git push -u origin master
+  113  ls
+  114  git push -u origin master
+  115  git remote add origin https://github.com/olivaa/Symfony.git
+  116  php bin/console --version
+  117  composer self-update
+  118  composer
+  119  composer update
+  120  composer
+  121  php composer-setup.php --version=1.0.0-alpha8
+  122  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php -version=1.5.6');"
+  123  php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  124  composer about
+  125  composer info
+  126  composer dump
+  127  composer -v
+  128  cd ..
+  129  cd ,,
+  130  cd ..
+  131  ls
+  132  cd Hola_Symfony/
+  133  ls
+  134  php composer.phar install
+  135  composer -v
+  136  composer self-update
+  137  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  138  php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  139  php composer-setup.php -version=1.5.6
+  140  php -r "unlink('composer-setup.php');"
+  141  composer info
+  142  composer self-update
+  143  clear
+  144  cd ..
+  145  cd ...
+  146  cd ..
+  147  cd Curso-Symfony/
+  148  mkdir Hola_Symfony4
+  149  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  150  php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  151  php composer-setup.php -version=1.5.6
+  152  php -r "unlink('composer-setup.php');"
+  153  clear
+  154  composer create-project symfony/website-skeleton Hola_Symfony_4
+  155  rmdir Hola_Symfony_4/
+  156  clear
+  157  composer create-project symfony/website-skeleton Hola_Symfony_4
+  158  clear
+  159  mkdir Hola_Symfony_4
+  160  cd Hola_Symfony_4/
+  161  composer update symfony/symfony --with-dependencies
+  162  composer update
+  163  composer create-project symfony/website-skeleton Hola_Symfony_4
+  164  composer create-project symfony/website-skeleton Hola_Symfony_4clear
+  165  clear
+  166  composer info
+  167  composer self-update
+  168  composer about
+  169  cd ..
+  170  composer info
+  171  composer about
+  172  clear
+  173  composer -v
+  174  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  175  php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  176  php composer-setup.php
+  177  composer -v
+  178  cd Hola_Symfony
+  179  composer -v
+  180  composer update
+  181  composer -v
+  182  composer require "codeception/codeception:2.1.4"
+  183  clear
+  184  composer require vendor/package:version
+  185  ls
+  186  composer install
+  187  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  188  php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  189  php composer-setup.php
+  190  php -r "unlink('composer-setup.php');"
+  191  clear
+  192  composer about
+  193  composer -v
+  194  clear
+  195  cd ..
+  196  composer install
+  197  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  198  php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  199  php composer-setup.php
+  200  php -r "unlink('composer-setup.php');"
+  201  composer -v
+  202  php composer-setup.php
+  203  php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  204  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  205  php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  206  php composer-setup.php -version=1.5.6
+  207  php composer.phar 
+  208  php composer.phar self-update
+  209  composer -v
+  210  sudo apt-get purge composer
+  211  sudo find / -iname composer.phar -exec rm {} \+;
+  212  rm -rf /home/<user>/.composer
+  213  rm -rf /home/imagina/.composer
+  214  clear
+  215  compoawe
+  216  composer
+  217  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  218  php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  219  php composer-setup.php -version=1.5.6
+  220  composer
+  221  php composer.phar install
+  222  php composer-setup.php --install-dir=bin --filename=composer
+  223  php composer-setup.php -install-dir=bin -filename=composer
+  224  composer
+  225  php bin/composer
+  226  mv composer.phar /usr/local/bin/composer
+  227  sudo mv composer.phar /usr/local/bin/composer
+  228  clear
+  229  composer
+  230  php composer-setup.php --install-dir=bin --filename=composer
+  231  php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+  232  sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+  233  composer
+  234  php bin/composer
+  235  sudo php composer-setup.php --install-dir=/usr/bin --filename=composer
+  236  php bin/composer
+  237  composer
+  238  clera
+  239  clear
+  240  ls
+  241  composer create-project symfony/skeleton Hola_Symfony_4
+  242  composer self-update
+  243  sudo composer self-update
+  244  sudo  composer require --dev symfony/phpunit-bridge
+  245  sudo composer self-updateclear
+  246  clear
+  247  composer create-project symfony/skeleton Hola_Symfony_4
+  248  sudo composer create-project symfony/skeleton Hola_Symfony_4
+  249  sudo composer create-project symfony/skeleton Hola_Symfony_44
+  250  clear
+  251  cd Hola_Symfony_4
+  252  sudo composer update symfony/symfony
+  253  sudo apt-get install php7.2
+  254  sudo add-apt-repository ppa:ondrej/php
+  255  sudo apt-get update
+  256  sudo apt-get install php7.2-cli
+  257  sudo composer update symfony/symfony
+  258  cd ..
+  259  sudo composer create-project symfony/skeleton Hola_Symfony_45
+  260  clear
+  261  sudo nautilus
+  262  cd vendor
+  263  ll
+  264  sudo rm ./composer
+  265  sudo rm -R composer
+  266  sudo rm -R .composer
+  267  composer
+  268  clera
+  269  php composer.par
+  270  php composer.phar
+  271  sudo add-apt-repository ppa:ondrej/php
+  272  cd /usr/local/bin/
+  273  ls
+  274  cd composer
+  275  sudo nautilus
+  276  clear
+  277  cd ..
+  278  cd bin/
+  279  cd composer
+  280  ll
+  281  cd >/usr/local/bin/composer;
+  282  cd  /usr/local/bin/composer
+  283  cd  /usr/local/bin
+  284  ll
+  285  gedit composer 
+  286  sudo rm composer
+  287  sudo rm -R Hola_Symfony_44
+  288  sudo rm -R Hola_Symfony_45
+  289  sudo rm vendor/
+  290  sudo rm -R vendor/
+  291  sudo apt-get purge composer
+  292  sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+  293  composer
+  294  php usr/local/bin/composer
+  295  php bin/composer
+  296  php composer-setup.php --install-dir=bin --filename=composer
+  297  mv composer.phar /usr/local/bin/composer
+  298  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  299  php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  300  sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+  301  mv composer.phar /usr/local/bin/composer
+  302  ls
+  303  mv composer.phar /usr/local/bin/composer
+  304  composer
+  305  composer install -d=/usr/local/bin
+  306  php bin
+  307  php.ini
+  308  php composer.phar 
+  309  sudo php composer-setup.php --install-dir=/usr/local/bin -
+  310  sudo cd ~; rm -i composer-setup.php
+  311  composer
+  312  sudo apt-get purge composer
+  313  sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+  314  curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+  315  clear
+  316  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  317  sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+  318  php bin/composer
+  319  mv composer.phar /usr/local/bin/composer
+  320  sudo mv composer.phar /usr/local/bin/composer
+  321  php bin/composer
+  322  php composer.phar install
+  323  ls -l /usr/local/bin/composer; which composer; alias composer
+  324  sudo /etc/php5/apache2
+  325  locate php.ini
+  326  sudo apt-get composer
+  327  sudo apt-get install composer
+  328  composer
+  329  sudo apt-get remove composer
+  330  sudo apt-get remove --auto-remove composer
+  331  composer
+  332  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  333  php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  334  sudo php composer-setup.php --install-dir=bin --filename=composer
+  335  sudo php composer-setup.php --install-dir=usr/local/bin --filename=composer
+  336  sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+  337  php /usr/local/bin/composer
+  338  composer
+  339  composer.phar update
+  340  cd /usr/local/bin/
+  341  ll
+  342  composer.phar
+  343  ll
+  344  cd composer
+  345  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  346  sudo rm composer 
+  347  composer.phar update
+  348  php bin/composer
+  349  ll
+  350  php composer.phar update
+  351  php composer.phar 
+  352  php -r "readfile('https://getcomposer.org/installer');" | php
+  353  sudo mv composer.phar /usr/local/bin/composer
+  354  sudo php -r "readfile('https://getcomposer.org/installer');" | php
+  355  sudo php -r "readfile('https://getcomposer.org/installer');" | sudo php
+  356  clear
+  357  composer
+  358  sudo chmod 777 composer
+  359  composer
+  360  sudo mv composer.phar /usr/local/bin/composer
+  361  sudo mv composer.phar /usr/local/bin/
+  362  git status 
+  363  git add .
+  364  clera
+  365  git commit
+  366  git config user.email alolrod@epsa.upv.es
+  367  git commit
+  368  ./bin/console server.run
+  369  ./bin/console server:run
+  370  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  371  php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  372  sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+  373  php -r "unlink('composer-setup.php');"
+  374  composer
+  375  sudo composer
+  376  composer
+  377  composer create-project symfony/skeleton  Hola_Symfony_4
+  378  apt-get install php7.2-xml
+  379  sudo apt-get install php7.2-xml
+  380  clear
+  381  ll
+  382  sudo rm -R Hola_Symfony_4/
+  383  composer create-project symfony/skeleton  Hola_Symfony_4
+  384  cd Hola_Symfony_4/
+  385  php -S 127.0.0.1:8000 -t public
+  386  composer require server
+  387  composer require annotations
+  388  cd ..
+  389  cd Deportes_Symfony/
+  390  file:///home/imagina/Documentos/Curso-Symfony/Hola_Symfony_4 dsfsaf 
+  391  ./bin/console server:run
+  392  phpstorm 
+  393  sudo dpkg -i slack-desktop-3.0.5-amd64.deb 
+  394  cd Documentos/Curso-Symfony/
+  395  ll
+  396  cd Deportes_Symfony/
+  397  clera
+  398  clear
+  399  git commit 
+  400  git status
+  401  git commit -a
+  402  git push 
+  403  git remote add Symfony
+  404  git remote add Symfony https://github.com/olivaa/Symfony.git
+  405  git push Symfony
+  406  git push Symfony master
+  407  git pull 
+  408  git pull master
+  409  git merge master 
+  410  git push Symfony master
+  411  git push
+  412  git remote show origin
+  413  git remote show Symfony
+  414  git push
+  415  git push Symfony master
+  416  sudo gedit pdo.ini 
+  417  ll
+  418  gedit .env
+  419  php bin/console doctrine:database:create
+  420  gedit .env
+  421  sudo apt-get install php-mysql
+  422  php bin/console doctrine:database:create
+  423  gedit .env
+  424  php bin/console doctrine:database:create
+  425  mysql
+  426  start mysql
+  427  sudo apt-get install mysql-server
+  428  mysql_secure_installation
+  429  gedit .env
+  430  php bin/console doctrine:database:create
+  431  php bin/console make:entity Noticia
+  432  $php bin/console make:controller NoticiaController
+  433  sudo apt-get install php-mysql
+  434  pdo_mysql
+  435  sudo phpenmod pdo_mysql
+  436  php -v
+  437  sudo apt-get install php7.0-mysql
+  438  sudo phpenmod pdo_mysql
+  439  sudo apt-get install php7.2-mysql
+  440  sudo apt-get install pdo-mysql
+  441  sudo phpenmod pdo_mysql
+  442  php -v
+  443  PDO
+  444  sudo apt-get install php7.2.2-mysql
+  445  udo apt-get install pdo-mysql
+  446  sudo apt-get install pdo-mysql
